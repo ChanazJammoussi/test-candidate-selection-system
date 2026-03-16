@@ -21,6 +21,7 @@ export default function CandidatLayout({
   const pathname = usePathname()
 
   const isPublicRoute = pathname === "/candidat/login"
+  const concourId = pathname.split("/")[2] ?? undefined
 
   if (isPublicRoute) {
     return <>{children}</>
@@ -29,12 +30,12 @@ export default function CandidatLayout({
   return (
     <div className="flex h-screen bg-background">
       <div className="hidden lg:block">
-        <Sidebar role="candidat" />
+        <Sidebar role="candidat" concourId={concourId} />
       </div>
 
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent side="left" className="p-0 w-64">
-          <Sidebar role="candidat" />
+          <Sidebar role="candidat" concourId={concourId} />
         </SheetContent>
       </Sheet>
 
