@@ -20,7 +20,7 @@ export default function CandidatLayout({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  const isPublicRoute = pathname === "/candidat/login"
+  const isPublicRoute = pathname === "/candidat/login" || pathname === "/candidat"
   const concourId = pathname.split("/")[2] ?? undefined
 
   if (isPublicRoute) {
